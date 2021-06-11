@@ -12,9 +12,13 @@
 
 // generate install steps
 const generateInstallSteps = installStepsArr => {
-  return `${installStepsArr.map(({ installStep, confirm}) => {
-    return `*  ${installStep}`;
-  }).join('\n  ')}`
+  if (data.sections.includes('Installation')) {
+    return `${installStepsArr.map(({ installStep, confirm}) => {
+      return `*  ${installStep}`;
+    }).join('\n  ')}`
+  } else {
+    return '';
+  }
 };
 
 // generate table of contents
@@ -27,10 +31,9 @@ const generateTableContents = sectionsArr => {
 const generateDeployedLink = data => {
   if (data.sections.includes('Deployed Application Link')) {
     return `
-  ## Deployed Application Link
   ${data.link}`;
   } else {
-    return false;
+    return '';
   }
 }
 
@@ -40,7 +43,7 @@ const generateDeployedScreenshot = data => {
   ## Deployed Application Screenshot
   ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")`;
   } else {
-    return;
+    return '';
   }
 }
 
@@ -50,7 +53,7 @@ const generateResultScreenshot = data => {
   ## Result Screenshot
   ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")`;
   } else {
-    return;
+    return '';
   }
 }
 
@@ -64,14 +67,37 @@ const generateCredits = data => {
   * ${githubLink}`;
     }).join('\n  \n  ')}`
   } else {
-    return;
+    return '';
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const sectionsArr = [
+    {
+      header: 'Installation',
+      content: generateInstallSteps(data.installSteps)
+    },
+
+    {
+      header: 'Usage',
+      content: data.usage
+    },
+
+    {
+      header: 'Deployed Application Link',
+      content: generateDeployedLink(data)
+    },
+
+    // {
+    //   header:
+    //   content:
+    // }
+  ]
+  let readMeSections = '';
   return `
   # ${data.title}
+  * ${renderLicenseBadge(license)}
 
   ## Description
   ${data.description}

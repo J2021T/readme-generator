@@ -51,7 +51,7 @@ const questions = [
         type: 'checkbox',
         name: 'sections',
         message: 'Select the other sections you would like to add to your README.md file.',
-        choices: ['Installation', 'Usage', 'Deployed Application Link', 'Deployed Application Screenshot', 'Result Screenshot', 'Credits', 'License', 'Badges', 'Contributing', 'Tests', 'Questions']
+        choices: ['Installation', 'Usage', 'Deployed Application Link', 'Deployed Application Screenshot', 'Result Screenshot', 'Credits', 'License', 'Badges', 'Contributing', 'Tests']
     },
 
     {
@@ -180,7 +180,7 @@ addCredit = userResponse => {
     if (!userResponse.credits) {
         userResponse.credits = [];
     };
-    
+
     console.log(`
     ==============
     Add New Credit
