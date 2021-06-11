@@ -48,16 +48,10 @@ const questions = [
     },
 
     {
-        type: 'confirm',
-        name: 'Deployed Application Screenshot',
-        message: 'Would you like to add a deployed screenshot section?'
-    },
-
-    {
         type: 'checkbox',
         name: 'sections',
         message: 'Select the other sections you would like to add to your README.md file.',
-        choices: ['Installation', 'Usage', 'Deployed Application Link', 'Deployed Application Screenshot', 'Credits', 'License', 'Badges', 'Features', 'Contributing', 'Tests']
+        choices: ['Installation', 'Usage', 'Deployed Application Link', 'Deployed Application Screenshot', 'Result Screenshot', 'Credits', 'License', 'Badges', 'Contributing', 'Tests', 'Questions']
     },
 
     {
@@ -163,7 +157,15 @@ const creditQuestion = [
     {
         type: 'input',
         name: 'githubLink',
-        message: "What is the collaborator's github link?"
+        message: "What is the collaborator's github link?",
+        validate: githubLinkInput => {
+            if (githubLinkInput) {
+                return true;
+            } else {
+                console.log('Please provide collaborator name!');
+                return false;
+            }
+        }
     },
     {
         type: 'confirm',
@@ -178,14 +180,14 @@ addCredit = userResponse => {
     if (!userResponse.credits) {
         userResponse.credits = [];
     };
-
+    
     console.log(`
     ==============
     Add New Credit
     ==============
     `);
 
-    return credit.prompt(creditQuestion)
+    return inquirer.prompt(creditQuestion)
         .then(creditData => {
             userResponse.credits.push(creditData);
 
@@ -221,14 +223,13 @@ init()
 })
 .then(userResponse => {
     if (userResponse.sections.includes('Credits')) {
-        addCredit(userResponse);
-        console.log(userResponse);
-        return userResponse;
+        return addCredit(userResponse);
     } else {
         console.log(userResponse);
         return userResponse;
     }
-}).then(userResponse => generateMarkdown(userResponse))
+})
+.then(userResponse => generateMarkdown(userResponse))
 .then(generateReadme => writeToFile('README.MD', generateReadme))
 .catch(err => {
     console.log(err);
