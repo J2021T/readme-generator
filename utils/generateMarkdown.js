@@ -34,12 +34,12 @@ const generateInstallSteps = data => {
 // generate table of contents
 const generateTableContents = sectionsArr => {
     return `${sectionsArr.map((section) => {
-      return '* [' + section + '](#' + section.toLowerCase().trim() + ')';
+      return '* [' + section + '](#' + section.toLowerCase() + ')';
     }).join('\n  ')}`
 };
 
 const generateDeployedLink = data => {
-  if (data.sections.includes('Deployed Application Link')) {
+  if (data.sections.includes('Deployed-Application-Link')) {
     return `
   ${data.link}`;
   } else {
@@ -48,7 +48,7 @@ const generateDeployedLink = data => {
 };
 
 const generateDeployedScreenshot = data => {
-  if (data.sections.includes('Deployed Application Screenshot')) {
+  if (data.sections.includes('Deployed-Application-Screenshot')) {
     return `
   ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")`;
   } else {
@@ -57,7 +57,7 @@ const generateDeployedScreenshot = data => {
 };
 
 const generateResultScreenshot = data => {
-  if (data.sections.includes('Result Screenshot')) {
+  if (data.sections.includes('Result-Screenshot')) {
     return `
   ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")`;
   } else {
@@ -116,17 +116,17 @@ function generateMarkdown(data) {
     },
 
     {
-      header: 'Deployed Application Link',
+      header: 'Deployed-Application-Link',
       content: generateDeployedLink(data)
     },
 
     {
-      header: 'Deployed Application Screenshot',
+      header: 'Deployed-Application-Screenshot',
       content: generateDeployedScreenshot(data)
     },
 
     {
-      header: 'Result Screenshot',
+      header: 'Result-Screenshot',
       content: generateResultScreenshot(data)
     },
 

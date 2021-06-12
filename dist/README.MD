@@ -1,14 +1,17 @@
 
-  # READEME Generator
+  # Link
   * ![MIT License](https://img.shields.io/badge/license-MIT-blue)
 
   ## Description
-  The project is a README.md file generator.  It was designed to quickly create a professional README for a new project.  The user utilizes Node.js and npm inquirer to determine the README input.  Then a README is generated and the user can copy and paste the code into their new project README.
+  Link is awesome
 
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Deployed Application Link](#deployedapplicationlink)
+  * [Deployed Application Screenshot](#deployedapplicationscreenshot)
   * [Result Screenshot](#resultscreenshot)
+  * [Credits](#credits)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
@@ -16,13 +19,22 @@
 
   
   ## Installation
-  *  Download Node.js
-  *  Clone the repo into your own repo
-  *  Navigate to the repo directory in your terminal.  Type 'npm install inquirer' to install the inquirer node package manager.
+  *  Get Link's number
+  *  Put Link's number in your phone
   
   
   ## Usage
-  To start follow the install instructions.  Once you have completed the install navigate to the directory with the index.js file in your temrinal.  In the terminal type 'node index'.  Follow and answer the prompts.  When you are done your README.md file should be complete.  The last thing you need to do is download any images you want in the read me to your image folder.  Once that is done update your file paths and alt texts in the README.md file.  For that all you should need to do is enter the file name where indicated and enter your alt tex where indicated.
+  Text Link
+  
+  
+  ## Deployed Application Link
+  
+  Link.com
+  
+  
+  ## Deployed Application Screenshot
+  
+  ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")
   
   
   ## Result Screenshot
@@ -30,21 +42,30 @@
   ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")
   
   
+  ## Credits
+  
+    
+  * Zelda
+  * Zelda2021
+  
+  
   ## Contributing
-  To contribute clone the repo and tweak the project to your liking.  Then reach out via GitHub or email (in Questions section) to discuss what you think could be better.
+  Clone the repo and use it.
   
   
   ## Tests
-  Clone the repo and start generating README's.
+  Clone the repo and use it.
   
   
   ## Questions
-  [J2021T](https://github.com/J2021T
-      [jordan.turcott@gmail.com](mailto:jordan.turcott@gmail.com)
+  GitHub: [Link2021](https://github.com/Link2021)
+
+  EMAIL: [Link@gmial](mailto:Link@gmial)
   
   
   ## License
   This project is covered under the [MIT](../assets/license-files/MIT.txt) license.
-    ![MIT License](https://img.shields.io/badge/license-MIT-blue)
+
+ ![MIT License](https://img.shields.io/badge/license-MIT-blue)
   
   
