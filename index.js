@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// TODO: Include packages needed for this project
 const fs = require('fs');
 const inquirer = require('inquirer');
 // const { formatWithOptions } = require('util');
@@ -51,13 +51,13 @@ const questions = [
         type: 'checkbox',
         name: 'sections',
         message: 'Select the other sections you would like to add to your README.md file.',
-        choices: ['Installation', 'Usage', 'Deployed Application Link', 'Deployed Application Screenshot', 'Result Screenshot', 'Credits', 'License', 'Badges', 'Contributing', 'Tests']
+        choices: ['Installation', 'Usage', 'Deployed Application Link', 'Deployed Application Screenshot', 'Result Screenshot', 'Credits', 'Contributing', 'Tests', 'Questions', 'License']
     },
 
     {
         type: 'input',
         name: 'usage',
-        message: 'Provide information on how to use the application. (Required)',
+        message: 'Provide information on how to use the project. (Required)',
         when: ({ sections }) => {
             if (sections.includes('Usage')) {
                 return true;
@@ -69,7 +69,7 @@ const questions = [
             if (usageInput) {
                 return true;
             } else {
-                console.log('Please provide information for using your application!');
+                console.log('Please provide information for using your project!');
                 return false;
             }
         }
@@ -78,14 +78,78 @@ const questions = [
     {
         type: 'input',
         name: 'link',
-        message: 'Please provide the link to your deployed application.',
+        message: 'Please provide the link to your deployed project.',
         when: ({ sections }) => {
             if (sections.includes('Deployed Application Link')) {
                 return true;
             } else {
                 return false;
             }
+        },
+        validate: linkInput => {
+            if (linkInput) {
+                return true;
+            } else {
+                console.log('Please provide a link for your project!');
+                return false;
+            }
         }
+    },
+
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Please describe how others can contribute to the project.',
+        when: ({ sections }) => {
+            if (sections.includes('Contributing')) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: contributingInput => {
+            if (contributingInput) {
+                return true;
+            } else {
+                console.log('Please provide information for how to contribute to your project!');
+                return false;
+            }
+        } 
+    },
+
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Please describe how to test the project.',
+        when: ({ sections }) => {
+            if (sections.includes('Tests')) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('Please provide information for how to test your project!');
+                return false;
+            }
+        } 
+    },
+
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Please pick the license for your project.',
+        choices: ['MIT', 'Apache', 'GPLv2', 'GPLv3'],
+        when: ({ sections }) => {
+            if (sections.includes('Tests')) {
+                return true;
+            } else {
+                return false;
+            }
+        },
     }
     
 ];
@@ -100,7 +164,7 @@ const installStepQuestion = [
             if (installStepInput) {
                 return true;
             } else {
-                console.log('Please provide information for installing your application!');
+                console.log('Please provide information for installing your project!');
                 return false;
             }
         }
@@ -223,9 +287,10 @@ init()
 })
 .then(userResponse => {
     if (userResponse.sections.includes('Credits')) {
+        console.log(userResponse);
         return addCredit(userResponse);
     } else {
-        console.log(userResponse);
+        
         return userResponse;
     }
 })
