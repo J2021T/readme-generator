@@ -71,7 +71,7 @@ const generateCredits = data => {
     ${data.credits.map(({ collaborator, githubLink, confirm }) => {
       return `
   * ${collaborator}
-  * ${githubLink}`;
+  * GitHub: [${githubLink}](https://github.com/${githubLink})`;
     }).join('\n  ')}`
   } else {
     return '';
