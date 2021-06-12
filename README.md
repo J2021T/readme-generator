@@ -26,7 +26,7 @@
   
   ## Result Screenshot
   
-  ![Alt-text](assets/images/*REMOVE AND ADD YOUR FILE NAME*.png "PLACE YOUR ALT TEXT HERE")
+  ![Alt-text](assets/images/README-screenshot.png "Screenshot of generated README.md file")
   
   
   ## Contributing
@@ -38,10 +38,10 @@
   
   
   ## Questions
-  [J2021T](https://github.com/J2021T)
-      [jordan.turcott@gmail.com](mailto:jordan.turcott@gmail.com)
+  GitHub: [J2021T](https://github.com/J2021T)  
+  EMAIL: [jordan.turcott@gmail.com](mailto:jordan.turcott@gmail.com)
   
   
   ## License
-  This project is covered under the [MIT](../assets/license-files/MIT.txt) license.
-    ![MIT License](https://img.shields.io/badge/license-MIT-blue)
+  This project is covered under the [MIT](../assets/license-files/MIT.txt) license.  
+  ![MIT License](https://img.shields.io/badge/license-MIT-blue)
