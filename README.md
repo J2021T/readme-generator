@@ -1,5 +1,4 @@
-
-  # READEME Generator
+ # READEME Generator
   * ![MIT License](https://img.shields.io/badge/license-MIT-blue)
 
   ## Description
@@ -39,12 +38,10 @@
   
   
   ## Questions
-  [J2021T](https://github.com/J2021T
+  [J2021T](https://github.com/J2021T)
       [jordan.turcott@gmail.com](mailto:jordan.turcott@gmail.com)
   
   
   ## License
   This project is covered under the [MIT](../assets/license-files/MIT.txt) license.
     ![MIT License](https://img.shields.io/badge/license-MIT-blue)
-  
-  

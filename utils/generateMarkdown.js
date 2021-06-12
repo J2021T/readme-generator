@@ -13,8 +13,8 @@ const renderLicenseBadge = data => {
 // // If there is no license, return an empty string
 const renderLicenseSection = data => {
   if (data.sections.includes('License')) {
-    return `This project is covered under the [${data.license}](../assets/license-files/${data.license}.txt) license.
-    ${renderLicenseBadge(data)}`;
+    return `This project is covered under the [${data.license}](../assets/license-files/${data.license}.txt) license.\n
+ ${renderLicenseBadge(data)}`;
   } else {
     return '';
   }
@@ -34,7 +34,7 @@ const generateInstallSteps = data => {
 // generate table of contents
 const generateTableContents = sectionsArr => {
     return `${sectionsArr.map((section) => {
-      return '* [' + section + '](#' + section.toLowerCase() + ')';
+      return '* [' + section + '](#' + section.toLowerCase().trim() + ')';
     }).join('\n  ')}`
 };
 
@@ -80,8 +80,8 @@ const generateCredits = data => {
 
 const generateQuestions = data => {
   if (data.sections.includes('Questions')) {
-    return `[${data.github}](https://github.com/${data.github}
-      [${data.email}](mailto:${data.email})`;
+    return `GitHub: [${data.github}](https://github.com/${data.github})\n
+  EMAIL: [${data.email}](mailto:${data.email})`;
   } else {
     return '';
   }
